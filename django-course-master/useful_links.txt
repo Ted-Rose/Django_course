@@ -1,0 +1,3 @@
+						USEFUL LINKS
+Type hints zero to hero:
+https://towardsdatascience.com/12-beginner-concepts-about-type-hints-to-improve-your-python-code-90f1ba0ac49#:~:text=Type%20hints%20are%20performed%20using,not%20enforced%20on%20their%20own.

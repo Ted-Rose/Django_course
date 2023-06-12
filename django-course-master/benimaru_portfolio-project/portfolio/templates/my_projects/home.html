@@ -1,0 +1,21 @@
+<title>My portfolio</title>
+{% extends 'my_projects/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-sm d-flex justify-content-center">
+    <img src="{% static 'portfolio/beni.png' %}" alt="main" class="rounded">
+</div>
+<h1 class="text-center">Projects</h1>
+<div class=" d-flex justify-content-center">
+    {% for project in my_projects %}
+        <div class="p-1">
+            <img src="{{ project.image.url }}" style="height: 200px; width: 200px; padding-right: 5px;">
+            <h2 class="text-center">{{ project.title }}</h2>
+            <p class="text-wrap text-center" style="width: 15rem;">{{ project.description }}</p>
+            {% if project.url %}
+            <br><a href="{{ project.url }}">Link</a>
+            {% endif %}
+            {% endfor %}
+            {% endblock %}
+        </div>
+</div>

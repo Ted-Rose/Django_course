@@ -1,0 +1,11 @@
+{% extends 'my_projects/base.html' %}
+{% block content %}
+<title>Metaphores</title>
+<header><h3>Count of blogs: {{ my_blogs.count }}</h3></header>
+<header><h2>Please don't read this blog. You can catch some cringe. Thank you for understanding.</h2></header>
+{% for blog in my_blogs %}
+<h4>{{ blog.date|date:'d/m/y' }}</h4>
+<a href="{% url 'blog:detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+<p>{{ blog.description|truncatechars:100 }}</p>        
+{% endfor %}
+{% endblock %}
