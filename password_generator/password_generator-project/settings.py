@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e+%(t1ph!j629@cvr%f0fwuqn5)clv#d3_4&ameuep$%mf)s6s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# If disabled will return blunt errors
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -76,6 +77,7 @@ WSGI_APPLICATION = 'password_generator.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        # Every db you name here creates in main directory as well
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
