@@ -22,5 +22,5 @@ urlpatterns = [
     path('', views.home),
     # Adding ending slash is a preference
     # path can differ from view or url name
-    path('generatedpassword/', views.password, name='password'),
+    path('password/', views.password, name='password'),
 ]
