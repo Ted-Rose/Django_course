@@ -20,5 +20,7 @@ from generator import views
 
 urlpatterns = [
     path('', views.home),
-    path('eggs', views.eggs),
+    # Adding ending slash is a preference
+    # path can differ from view or url name
+    path('generatedpassword/', views.password, name='password'),
 ]

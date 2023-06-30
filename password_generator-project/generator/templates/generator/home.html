@@ -6,7 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hey!</h1>
-    <p>{{ password }}</p>
+    <h1>Password Generator</h1>
+    <!-- Reference url in urls.py by url name -->
+    <form action='{% url 'password' %}' >
+        <select name = "length">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        <input type="submit" value="Generate Password">
+    </form>
 </body>
 </html>
