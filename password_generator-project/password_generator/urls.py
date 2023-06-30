@@ -19,7 +19,8 @@ from django.urls import path
 from generator import views
 
 urlpatterns = [
-    path('', views.home),
+    path('', views.home, name='home'),
+    path('/about', views.about, name='about'),
     # Adding ending slash is a preference
     # path can differ from view or url name
     path('password/', views.password, name='password'),
