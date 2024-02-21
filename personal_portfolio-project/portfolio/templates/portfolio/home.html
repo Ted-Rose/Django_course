@@ -1,32 +1,19 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% extends 'portfolio/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <a href="{% url 'blog:all_blogs' %}"><h1>Blog</h1></a>
+    <br>
+    <h1>Projects:</h1>
+    {% for project in projects %}
+        <h2>{{project.title}}</h2>
+        {% load static %}
+            {% comment %} <img src="{% static  'portfolio/funny.png' %}" height=400 width=400 alt=""> {% endcomment %}
+            <p>{{project.description}}</p>
+            <img src="{{project.image.url}}" height=400 width=400 alt="">
+        {% if project.url %}
+            <a href="{{project.url}}">Link</a>
+        {% endif %}
+    {% endfor %}
 
-<body>
-    <div class="container text-center">
-        <a href="{% url 'blog:all_blogs' %}"><h1>Blog</h1></a>
-        <br>
-        <h1>Projects:</h1>
-        {% for project in projects %}
-            <h2>{{project.title}}</h2>
-            {% load static %}
-                {% comment %} <img src="{% static  'portfolio/funny.png' %}" height=400 width=400 alt=""> {% endcomment %}
-                <p>{{project.description}}</p>
-                <img src="{{project.image.url}}" height=400 width=400 alt="">
-            {% if project.url %}
-                <a href="{{project.url}}">Link</a>
-            {% endif %}
-        {% endfor %}
-
-    </div>
-</body>
-
-</html>
+{% endblock %}
