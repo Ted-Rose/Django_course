@@ -4,4 +4,3 @@
 2. Apps
     1. python manage.py startapp generator
         1. Creates generator folder in project for generator app
-3. Continue on 5 - 5 Displaying Objects at 07:17 / 15:07

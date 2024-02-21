@@ -12,13 +12,15 @@
 
 <body>
     <div class="container text-center">
+        <a href="{% url 'blog:all_blogs' %}"><h1>Blog</h1></a>
+        <br>
         <h1>Projects:</h1>
         {% for project in projects %}
-        <h2>{{project.title}}</h2>
-        {% load static %}
-        <img src="{% static  'portfolio/funny.png' %}" height=400 width=400 alt="">
-            <p>{{project.description}}</p>
-            <img src="{{project.image.url}}" height=400 width=400 alt="">
+            <h2>{{project.title}}</h2>
+            {% load static %}
+                {% comment %} <img src="{% static  'portfolio/funny.png' %}" height=400 width=400 alt=""> {% endcomment %}
+                <p>{{project.description}}</p>
+                <img src="{{project.image.url}}" height=400 width=400 alt="">
             {% if project.url %}
                 <a href="{{project.url}}">Link</a>
             {% endif %}
